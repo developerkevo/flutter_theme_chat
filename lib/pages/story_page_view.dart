@@ -20,7 +20,6 @@ class _StoryPageViewState extends State<StoryPageView> with SingleTickerProvider
       if (animationController.isCompleted && Navigator.of(context).canPop()) {
         Navigator.of(context).pop();
       }
-      ;
     });
     super.initState();
   }
