@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_theme_chat/models/story_model.dart';
+import 'package:flutter_theme_chat/pages/story_page_view.dart';
 
 class StoryList extends StatelessWidget {
   @override
@@ -34,8 +35,14 @@ class StoryList extends StatelessWidget {
               shape: BoxShape.circle,
               border: Border.all(width: 2.0, color: Theme.of(context).accentColor),
             ),
-            child: CircleAvatar(
-              backgroundImage: NetworkImage(story.image),
+            child: InkWell(
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => StoryPageView(story)));
+              },
+              customBorder: CircleBorder(),
+              child: CircleAvatar(
+                backgroundImage: NetworkImage(story.image),
+              ),
             ),
           ),
           Text(story.name),
